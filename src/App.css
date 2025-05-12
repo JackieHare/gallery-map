@@ -1,0 +1,31 @@
+.gallery-map-container {
+  width: 50%; /* Ustawiamy szerokość kontenera na 50% szerokości strony */
+  margin: 0 auto; /* Opcjonalnie centrowanie mapy */
+  border: 1px solid gray; /* lub np. #ccc dla jaśniejszej szarości */
+  border-radius: 2%;
+}
+
+.gallery-map-container svg {
+  width: 100%; /* Ustawiamy szerokość SVG na 100% kontenera */
+  height: auto; /* Zachowujemy proporcje mapy */
+}
+.title {
+  text-align: center;
+}
+
+#corridor,
+#waytogallery,
+#toiletroom,
+#room1
+ {
+  transition: fill 1s ease; /* Płynne przejście koloru (czas: 0.3s) */
+}
+
+#corridor:hover,
+#waytogallery:hover,
+#toiletroom:hover,
+#room3:hover
+#stairs2:hover {
+  fill: #69df5f; /* Pomarańczowy kolor po najechaniu */
+  cursor: pointer;
+}
