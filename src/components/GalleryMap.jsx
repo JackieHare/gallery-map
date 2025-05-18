@@ -83,6 +83,37 @@ const GalleryMap = () => {
           d="M256.02 121.67q0-16.291 10.56-26.701 10.56-10.408 27.153-10.409 17.8 0 29.567 11.012t11.767 24.89q0 10.259-4.676 20.516-4.677 10.258-14.783 16.443-10.108 6.185-20.667 6.185-14.482 0-26.701-12.37t-12.22-29.567zM213.782 481.6l-.604-19.611 34.092-4.525q7.543-2.112 10.41-6.185 2.865-4.074 2.865-18.253v-3.32q0-3.62.453-13.123.452-9.504.452-16.744.001-5.733-.905-22.024l.302-15.085-.302-14.18.604-49.178q0-9.352-1.81-19.31-3.319-4.524-12.068-7.843-8.75-3.32-30.472-4.828v-16.895q31.076-1.809 54.608-12.973 15.99-7.24 34.696-25.645h20.214q1.206 37.412 1.206 97.148l-2.112 123.09q0 12.672 1.206 22.93 9.352 3.318 30.472 6.637 8.146 1.207 12.973 3.017l-.3 16.594q-8.148.3-12.069.301-4.526.001-13.878-.604-30.773-1.508-82.365-1.508-14.784 0-28.662 1.055-13.878 1.057-19.007 1.056z"
         ></path>
       </symbol>
+      <symbol id="AigaSymbols.svg:Elevator">
+        <g
+          id="g73"
+          fill="none"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="5"
+        >
+          <path id="path72" d="M26.5 23.5v-17M20 14l6.5-7.5L33 14"></path>
+          <path id="path73" d="M45.5 6.5v17M39 16l6.5 7.5L52 16"></path>
+        </g>
+        <rect
+          id="rect73"
+          width="38"
+          height="38"
+          x="17"
+          y="28"
+          stroke="none"
+          ry="5"
+        ></rect>
+        <path id="rect74" fill="#fff" stroke="none" d="M22 33h28v28H22z"></path>
+        <g id="person1" stroke="none">
+          <circle id="circle74" cx="27.5" cy="38.75" r="1.75"></circle>
+          <path
+            id="path74"
+            d="M24.5 41a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h.25v8.5a1.25 1.25 0 1 0 2.5 0V50h.5v8.5a1.25 1.25 0 1 0 2.5 0V50h.25a1 1 0 0 0 1-1v-7a1 1 0 0 0-1-1z"
+          ></path>
+        </g>
+        <use xlinkHref="#person1" id="use74" x="8.5"></use>
+        <use xlinkHref="#person1" id="use75" x="17"></use>
+      </symbol>
       <linearGradient
         id="linearGradient13"
         x1="682.26"
@@ -100,7 +131,8 @@ const GalleryMap = () => {
       id="corridor"
       fill="#fff"
       stroke="#000"
-      strokeWidth="1.023"
+      strokeDasharray="none"
+      strokeWidth="1.667"
       d="M621.97 136.43h80.372v159.24H621.97z"
       onMouseEnter={() => setHoveredLabel('Korytarz')}
       onMouseLeave={() => setHoveredLabel(null)}
@@ -111,53 +143,8 @@ const GalleryMap = () => {
       stroke="#000"
       strokeWidth="1.667"
       d="M224.107 171H621.74v140.482H224.107z"
-      onMouseEnter={() => setHoveredLabel('Sala im. Picasso')}
+      onMouseEnter={() => setHoveredLabel('Sala im. Witkiewicza')}
       onMouseLeave={() => setHoveredLabel(null)}
-    ></path>
-    <path
-      id="rect11"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      d="M623.29 99.162h39.433v4.784H623.29z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect12"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      d="M623.2 94.362h39.563v4.784H623.2z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect13"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      d="M623.13 89.572h39.563v4.784H623.13z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect14"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      d="M623.27 84.822h39.466v4.752H623.27z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect15"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      d="M623.2 79.882h39.563v4.784H623.2z"
-      paintOrder="stroke fill markers"
     ></path>
     <path
       id="hall2"
@@ -169,7 +156,7 @@ const GalleryMap = () => {
       strokeWidth="1.667"
       d="M61.673 171.21h162.36v141.06H61.673z"
       paintOrder="normal"
-      onMouseEnter={() => setHoveredLabel('Sala im. Rubensa')}
+      onMouseEnter={() => setHoveredLabel('Sala im. Beksińskiego')}
       onMouseLeave={() => setHoveredLabel(null)}
     ></path>
     <rect
@@ -191,16 +178,16 @@ const GalleryMap = () => {
     ></rect>
     <rect
       id="room8"
-      width="77.641"
-      height="102.125"
-      x="145.901"
-      y="310.617"
+      width="78.262"
+      height="101.681"
+      x="145.902"
+      y="311.059"
       fill="#fff"
       stroke="#000"
       strokeDasharray="none"
       strokeLinecap="square"
       strokeLinejoin="miter"
-      strokeWidth="1.661"
+      strokeWidth="1.664"
       paintOrder="normal"
       ry="0"
       onMouseEnter={() => setHoveredLabel('Sala nr 8')}
@@ -223,10 +210,11 @@ const GalleryMap = () => {
       id="room6"
       fill="#fff"
       stroke="#000"
+      strokeDasharray="none"
       strokeLinecap="square"
       strokeLinejoin="miter"
-      strokeWidth="1.999"
-      d="M146.241 72.209h77.868v98.989h-77.868z"
+      strokeWidth="1.662"
+      d="M146.243 72.211h78.176v98.803h-78.176z"
       paintOrder="normal"
       onMouseEnter={() => setHoveredLabel('Sala nr 6')}
       onMouseLeave={() => setHoveredLabel(null)}
@@ -238,8 +226,8 @@ const GalleryMap = () => {
       strokeDasharray="none"
       strokeLinecap="square"
       strokeLinejoin="miter"
-      strokeWidth="1.667"
-      d="M223.49 310.847h198.319v102.045H223.49z"
+      strokeWidth="1.664"
+      d="M224.112 310.846H421.81v102.048H224.112z"
       paintOrder="normal"
       onMouseEnter={() => setHoveredLabel('Sala nr 3')}
       onMouseLeave={() => setHoveredLabel(null)}
@@ -251,8 +239,8 @@ const GalleryMap = () => {
       strokeDasharray="none"
       strokeLinecap="square"
       strokeLinejoin="miter"
-      strokeWidth="1.671"
-      d="M421.61 311.021h199.855v102.005H421.61z"
+      strokeWidth="1.672"
+      d="M421.611 311.022h200.166v102.004H421.611z"
       paintOrder="normal"
       onMouseEnter={() => setHoveredLabel('Sala nr 4')}
       onMouseLeave={() => setHoveredLabel(null)}
@@ -283,252 +271,37 @@ const GalleryMap = () => {
       strokeWidth="1.663"
       ry="0"
       onMouseEnter={() => setHoveredLabel('Sala nr 2')}
-      onMouseLeave={() => setHoveredLabel(null)}
-    ></rect>
-    <path
-      id="stairs2"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="1.655"
-      d="M623.05 71.858h39.635v7.241H623.05z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect34"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.982"
-      d="M-701.62-110.27h38.14v4.772h-38.14z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect35"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.55-115.07h38.099v4.774h-38.099z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect36"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.61-119.84h38.099v4.774h-38.099z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect37"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.987"
-      d="M-701.64-124.6h38.166v4.785h-38.166z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect38"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.982"
-      d="M-701.71-129.52h38.265v4.772h-38.265z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect26"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeWidth="1.559"
-      d="M663.6 129.66h37.846v7.274H663.6z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect27"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M622.98 132.67h39.747v4.6H622.98z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect28"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M623.09 127.85h39.563v4.784H623.09z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect29"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M623.16 123.04h39.563v4.784H623.16z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect30"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M623.2 118.31h39.563v4.784H623.2z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect31"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M623.15 113.42h39.563v4.784H623.15z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect32"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M623.18 108.68h39.563v4.784H623.18z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect33"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      d="M623.27 103.94h39.498v4.752H623.27z"
-      paintOrder="stroke fill markers"
-    ></path>
-    <path
-      id="rect40"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="1.032"
-      d="M-701.56-76.831h38.056v5.114h-38.056z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect41"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.65-81.631h38.099v4.774h-38.099z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect42"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.58-86.431h38.099v4.774h-38.099z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect43"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.55-91.151h38.099v4.774h-38.099z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect44"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.6-96.041h38.099v4.774H-701.6z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect45"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.98"
-      d="M-701.56-100.77h38.099v4.774h-38.099z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="rect46"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeLinejoin="bevel"
-      strokeWidth="0.982"
-      d="M-701.64-105.5h38.202v4.74h-38.202z"
-      paintOrder="stroke fill markers"
-      transform="scale(-1)"
-    ></path>
-    <path
-      id="toiletroom"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeWidth="1.294"
-      d="M702.58 136.91h101.06v158.74H702.58z"
-      paintOrder="normal"
-      onMouseEnter={() => setHoveredLabel('Toaleta')}
-      onMouseLeave={() => setHoveredLabel(null)}
-    ></path>
-    <path
-      id="ticketandinforoom"
-      fill="#fff"
-      stroke="#000"
-      strokeLinecap="square"
-      strokeWidth="1.662"
-      d="M702.81 295.68h100.57v118.06H702.81z"
-      paintOrder="normal"
-      onMouseEnter={() => setHoveredLabel('Kasa biletowa oraz informacja')}
-      onMouseLeave={() => setHoveredLabel(null)}
-    ></path>
-    <use
-      xlinkHref="#AigaSymbols.svg:TicketPurchase_Inv"
-      id="ticketemblem"
-      fill="#000"
-      stroke="#000"
-      transform="matrix(.69356 0 0 .70421 710.34 303.52)"
-    ></use>
-    <use
-      xlinkHref="#sjjb-tourist.svg:symbol84"
-      id="infoemblem"
-      width="576.445"
-      height="577.452"
-      fill="#000"
-      transform="matrix(.08956 0 0 .0854 747.13 359.44)"
-    ></use>
+      onMouseLeave={() => setHoveredLabel(null)}>
+    </rect>
+    <g id="ticketandinfo"
+    onMouseEnter={() => setHoveredLabel('Kasa biletowa i informacja')}
+      onMouseLeave={() => setHoveredLabel(null)}>
+      <path
+        id="ticketandinforoom"
+        fill="#fff"
+        stroke="#000"
+        strokeDasharray="none"
+        strokeLinecap="square"
+        strokeWidth="1.663"
+        d="M702.293 295.163h101.091v119.094H702.293z"
+        paintOrder="normal"
+      ></path>
+      <use
+        xlinkHref="#AigaSymbols.svg:TicketPurchase_Inv"
+        id="ticketemblem"
+        fill="#000"
+        stroke="#000"
+        transform="matrix(.69356 0 0 .70421 710.34 303.52)"
+      ></use>
+      <use
+        xlinkHref="#sjjb-tourist.svg:symbol84"
+        id="infoemblem"
+        width="576.445"
+        height="577.452"
+        fill="#000"
+        transform="matrix(.08956 0 0 .0854 747.13 359.44)"
+      ></use>
+    </g>
     <use
       xlinkHref="#AigaSymbols.svg:RightArrow"
       id="arrow"
@@ -536,30 +309,44 @@ const GalleryMap = () => {
       stroke="#000"
       transform="matrix(.25247 0 0 .18259 686.73 378.04)"
     ></use>
-    <use
-      xlinkHref="#sjjb-amenity.svg:symbol95"
-      id="wcinvalid"
-      width="576.445"
-      height="577.452"
-      fill="#000"
-      transform="matrix(.1051 0 0 .09733 723.31 225.43)"
-    ></use>
-    <use
-      xlinkHref="#sjjb-amenity.svg:toilets_men"
-      id="wcmen"
-      width="508.578"
-      height="507.578"
-      fill="#000"
-      transform="matrix(.0744 0 0 .07127 712.34 158.21)"
-    ></use>
-    <use
-      xlinkHref="#sjjb-amenity.svg:toilets_women"
-      id="wcwomen"
-      width="531.432"
-      height="526.846"
-      fill="#000"
-      transform="matrix(.0774 0 0 .07207 755.63 158.05)"
-    ></use>
+    <g id="toilet"
+    onMouseEnter={() => setHoveredLabel('Toaleta')}
+      onMouseLeave={() => setHoveredLabel(null)}>
+      <path
+        id="toiletroom"
+        fill="#fff"
+        stroke="#000"
+        strokeDasharray="none"
+        strokeLinecap="square"
+        strokeWidth="1.667"
+        d="M702.58 136.91h101.06v158.74H702.58z"
+        paintOrder="normal"
+      ></path>
+      <use
+        xlinkHref="#sjjb-amenity.svg:symbol95"
+        id="wcinvalid"
+        width="576.445"
+        height="577.452"
+        fill="#000"
+        transform="matrix(.1051 0 0 .09733 723.31 225.43)"
+      ></use>
+      <use
+        xlinkHref="#sjjb-amenity.svg:toilets_men"
+        id="wcmen"
+        width="508.578"
+        height="507.578"
+        fill="#000"
+        transform="matrix(.0744 0 0 .07127 712.34 158.21)"
+      ></use>
+      <use
+        xlinkHref="#sjjb-amenity.svg:toilets_women"
+        id="wcwomen"
+        width="531.432"
+        height="526.846"
+        fill="#000"
+        transform="matrix(.0774 0 0 .07207 755.63 158.05)"
+      ></use>
+    </g>
     <path
       id="path48"
       fill="#fff"
@@ -611,7 +398,7 @@ const GalleryMap = () => {
       stroke="#fdfffd"
       strokeLinecap="square"
       strokeWidth="3.333"
-      d="M158.21 170.98h54.949"
+      d="M158.21 171.421h54.949"
       paintOrder="normal"
     ></path>
     <path
@@ -690,6 +477,25 @@ const GalleryMap = () => {
       onMouseEnter={() => setHoveredLabel('Wejście do Galerii')}
       onMouseLeave={() => setHoveredLabel(null)}
     ></path>
+    <g id="elevator" stroke="#000"
+    onMouseEnter={() => setHoveredLabel('Winda')}
+      onMouseLeave={() => setHoveredLabel(null)}>
+      <path
+        id="rect1"
+        fill="#fff"
+        strokeDasharray="none"
+        strokeLinecap="square"
+        strokeWidth="1.658"
+        d="M621.799 72.311h80.8v65.024h-80.8z"
+        paintOrder="markers fill stroke"
+      ></path>
+      <use
+        xlinkHref="#AigaSymbols.svg:Elevator"
+        id="use1-4"
+        fill="#000"
+        transform="matrix(.7528 0 0 .68238 634.478 82.003)"
+      ></use>
+    </g>
   </svg>
   </div>
 

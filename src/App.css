@@ -1,10 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
+
+/* ======= GLOBAL STYLES ======= */
+
 body {
   margin: 0;
   padding: 0;
   position: relative;
   overflow: hidden;
+  font-family: 'Open Sans', sans-serif;
 }
 
 body::after {
@@ -17,38 +21,16 @@ body::after {
   background-image: url('/background.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(10px);  /* Rozmycie tła */
-  z-index: -1;  /* Ustawienie tła za zawartością */
+  filter: blur(10px);         /* Rozmycie tła */
+  z-index: -1;                /* Ustawienie tła za zawartością */
 }
 
 main {
   position: relative;
-  z-index: 1;  /* Treść aplikacji zawsze na wierzchu */
+  z-index: 1;                 /* Treść aplikacji zawsze na wierzchu */
 }
 
-
-
-
-.gallery-map {
-  width: 50%; /* Ustawiamy szerokość kontenera na 50% szerokości strony */
-  margin: 0 auto; /* Opcjonalnie centrowanie mapy */
-  border: 1px solid rgba(255, 255, 255, 0.3); /* lekko przejrzysta ramka */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);   /* bardzo subtelny cień */
-  border-radius: 2%;
-   background-color: rgba(255, 255, 255, 0.6); /* półprzezroczyste białe tło */
-  padding: 20px;
-  border-radius: 16px;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1); /* lekki cień dla głębi */
-  backdrop-filter: blur(4px); /* rozmycie tła pod spodem */
-  -webkit-backdrop-filter: blur(4px); /* dla kompatybilności z Safari */
-
-}
-
-
-.gallery-map-container svg {
-  width: 100%; /* Ustawiamy szerokość SVG na 100% kontenera */
-  height: auto; /* Zachowujemy proporcje mapy */
-}
+/* ======= TITLE ======= */
 
 .title {
   font-size: 24px;
@@ -57,18 +39,40 @@ main {
   text-align: center;
   font-family: "Mea Culpa", cursive;
 }
+
+/* ======= GALLERY MAP CONTAINER ======= */
+
+.gallery-map {
+  width: 50%;
+  margin: 0 auto;
+  padding: 20px;
+  border-radius: 16px;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.gallery-map-container svg {
+  width: 100%;
+  height: auto;
+}
+
+/* ======= ANIMATED ELEMENT ======= */
+
 .animated-element {
   display: flex;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);   /* bardzo subtelny cień */
-  border-radius: 6%;
   margin: 20px;
   padding: 2%;
-  background-color: rgba(255, 255, 255, 0.6);
   height: 40px;
+  border-radius: 6%;
+  background-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(10px);
-  transition: 
+  transition:
     opacity 0.5s ease-in-out,
     width 0.5s ease-in-out,
     transform 0.5s ease-in-out;
@@ -86,11 +90,12 @@ main {
   transform: translateY(0);
 }
 
-
+/* ======= INTERACTIVE ROOMS ======= */
 
 #corridor,
 #waytogallery,
 #toiletroom,
+#ticketandinfo,
 #room1,
 #room2,
 #room3,
@@ -100,9 +105,9 @@ main {
 #room7,
 #room8,
 #hall1,
-#hall2
-{
-  transition: fill 1s ease; /* Płynne przejście koloru (czas: 0.3s) */
+#hall2,
+#elevator {
+  transition: fill 1s ease;
 }
 
 #corridor:hover,
@@ -117,8 +122,9 @@ main {
 #room7:hover,
 #room8:hover,
 #hall1:hover,
-#hall2:hover
-{
-  fill: #69df5f; /* Pomarańczowy kolor po najechaniu */
+#hall2:hover,
+#ticketandinfo:hover,
+#elevator:hover {
+  fill: #69df5f;             /* Zielony kolor po najechaniu */
   cursor: pointer;
 }

@@ -14,9 +14,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+  "start": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+  "build": "cross-env NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+   "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -39,6 +39,7 @@
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
+    "cross-env": "^7.0.3",
     "vite-plugin-svgr": "^4.3.0"
   }
 }
