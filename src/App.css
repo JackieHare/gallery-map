@@ -128,3 +128,46 @@ main {
   fill: #69df5f;             /* Zielony kolor po najechaniu */
   cursor: pointer;
 }
+
+.info-box {
+  position: absolute;
+  bottom: -20px;               /* startujemy lekko pod mapą */
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+  width: 100%;
+  max-width: 800px;
+  background-color: white;
+  color: #333;
+  padding: 24px 32px;
+  border-radius: 12px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 18px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  overflow: hidden;
+
+  /* ukryty stan początkowy */
+  max-height: 0;
+  opacity: 0;
+  transition:
+    max-height 0.5s ease,
+    opacity 0.5s ease,
+    transform 0.5s ease;
+  pointer-events: none;
+}
+
+.info-box.visible {
+  /* docelowy stan widoczny – blok wysunięty i rozłożony */
+  transform: translateX(-50%) translateY(0);
+  max-height: 400px;  /* dopasuj do maksymalnej wysokości treści */
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.info-box.hidden {
+  /* powrót do ukrycia */
+  transform: translateX(-50%) translateY(100%);
+  max-height: 0;
+  opacity: 0;
+  pointer-events: none;
+}

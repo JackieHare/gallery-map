@@ -10,11 +10,13 @@ function App() {
         <div className="title">
           <h1>Galeria "Malowany Bukszpan"</h1>
           </div>
-          <div className="gallery-map-container">
+          <div className="gallery-map-container">           
        <GalleryMap />
        
     </div>
+    <div id="info-box" class="info-box hidden"></div>
     </div>
+    
   );
 }
 

@@ -1,15 +1,51 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import InfoBox from "./InfoBox";
+
+const infoTextMap = {
+  corridor: "To jest korytarz!",
+  room1: "To jest sala nr 1",
+  room2: "Tu znajdziesz wystawę malarstwa.",
+  room3: "Pokój z instalacjami multimedialnymi.",
+  hall1: "Główne wejście do galerii.",
+  elevator: "Winda na piętro.",
+  // Dodaj inne ID wg potrzeb
+};
 
 const GalleryMap = () => {
+  const [infoVisible, setInfoVisible] = useState(false);
+  const [infoText, setInfoText] = useState("");
   const [hoveredLabel, setHoveredLabel] = useState(null);
 
+  useEffect(() => {
+    const handleClick = (e) => {
+      const id = e.target.id;
+      if (infoTextMap[id]) {
+        setHoveredLabel(infoTextMap[id]);
+        setTimeout(() => {
+          setHoveredLabel(null);
+        }, 3000); // ukryj po 3 sekundach
+      }
+    };
+
+    const svg = document.getElementById("gallery-svg");
+    if (svg) {
+      svg.addEventListener("click", handleClick);
+    }
+
+    return () => {
+      if (svg) {
+        svg.removeEventListener("click", handleClick);
+      }
+    };
+  }, []);
+
   return (
-    
-<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-  <div className={`animated-element ${hoveredLabel ? 'visible' : 'hidden'}`}>
-  {hoveredLabel ? hoveredLabel : null}
-</div>
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
+    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+      <div className={`animated-element ${hoveredLabel ? 'visible' : 'hidden'}`}>
+        {hoveredLabel}
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
 
       <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -19,6 +55,14 @@ const GalleryMap = () => {
     height="325mm"
     version="1.1"
     viewBox="0 0 833.33 541.67"
+    onClick={(e) => {
+    const id = e.target.id;
+    if (infoTextMap[id]) {
+      setInfoText(infoTextMap[id]);
+      setInfoVisible(true);
+      
+    }
+  }}
   >
     <defs id="defs10">
       <symbol id="sjjb-amenity.svg:toilets_men" viewBox="0 0 508.578 507.578">
@@ -497,6 +541,7 @@ const GalleryMap = () => {
       ></use>
     </g>
   </svg>
+   <InfoBox text={infoText} visible={infoVisible} />
   </div>
 
       
