@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Quicksand:wght@300..700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 
-/* ======= GLOBAL STYLES ======= */
+/* ===== GLOBAL STYLES ===== */
 
 body {
   margin: 0;
   padding: 0;
   position: relative;
-  overflow: hidden;
+  overflow: auto;
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -21,29 +21,31 @@ body::after {
   background-image: url('/background.jpg');
   background-size: cover;
   background-position: center;
-  filter: blur(10px);         /* Rozmycie tła */
-  z-index: -1;                /* Ustawienie tła za zawartością */
+  filter: blur(10px);
+  z-index: -1;
 }
 
 main {
   position: relative;
-  z-index: 1;                 /* Treść aplikacji zawsze na wierzchu */
+  z-index: 1;
 }
 
-/* ======= TITLE ======= */
+/* ===== TITLE ===== */
 
 .title {
-  font-size: 24px;
+  font-size: 2rem;
   font-weight: bold;
   color: #222;
   text-align: center;
   font-family: "Mea Culpa", cursive;
+  margin: 20px 0;
 }
 
-/* ======= GALLERY MAP CONTAINER ======= */
+/* ===== GALLERY MAP ===== */
 
 .gallery-map {
-  width: 50%;
+  width: 90%;
+  max-width: 100%;
   margin: 0 auto;
   padding: 20px;
   border-radius: 16px;
@@ -54,27 +56,65 @@ main {
   -webkit-backdrop-filter: blur(4px);
 }
 
-.gallery-map-container svg {
+
+
+.gallery-map-container {
   width: 100%;
-  height: auto;
+  min-height: 500%; /* wysokość dopasowana do mapy */
+
 }
 
-/* ======= ANIMATED ELEMENT ======= */
+.gallery-map-container svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+/* ===== ZOOM CONTROLS ===== */
+
+.zoom-controls {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 15px;
+}
+
+.zoom-btn {
+  background-color: #ffffffdd;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.2s ease, transform 0.1s ease;
+}
+
+.zoom-btn:hover {
+  background-color: #f0f0f0;
+  transform: scale(1.1);
+}
+
+.zoom-btn:active {
+  transform: scale(0.95);
+}
+
+/* ===== ANIMATED LABEL (tooltip) ===== */
 
 .animated-element {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 20px;
-  padding: 2%;
-  height: 40px;
-  border-radius: 6%;
-  background-color: rgba(255, 255, 255, 0.6);
+  padding: 10px 20px;
+  min-height: 40px;
+  border-radius: 12px;
+  background-color: rgba(255, 255, 255, 0.7);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   transform: translateY(10px);
   transition:
     opacity 0.5s ease-in-out,
-    width 0.5s ease-in-out,
     transform 0.5s ease-in-out;
 }
 
@@ -90,7 +130,7 @@ main {
   transform: translateY(0);
 }
 
-/* ======= INTERACTIVE ROOMS ======= */
+/* ===== INTERACTIVE ROOMS ===== */
 
 #corridor,
 #waytogallery,
@@ -107,12 +147,9 @@ main {
 #hall1,
 #hall2,
 #elevator {
-  transition: fill 1s ease;
+  transition: fill 0.5s ease;
 }
 
-#corridor:hover,
-#waytogallery:hover,
-#toiletroom:hover,
 #room1:hover,
 #room2:hover,
 #room3:hover,
@@ -122,52 +159,54 @@ main {
 #room7:hover,
 #room8:hover,
 #hall1:hover,
-#hall2:hover,
-#ticketandinfo:hover,
-#elevator:hover {
-  fill: #69df5f;             /* Zielony kolor po najechaniu */
+#hall2:hover {
+  fill: #69df5f;
   cursor: pointer;
 }
 
+/* ===== ARTWORK INFO BOX ===== */
+
 .info-box {
-  position: absolute;
-  bottom: -20px;               /* startujemy lekko pod mapą */
-  left: 50%;
-  transform: translateX(-50%) translateY(100%);
+  margin-top: 30px;
   width: 100%;
-  max-width: 800px;
-  background-color: white;
+}
+
+.artwork {
+  background-color: #fff;
+  border-radius: 16px;
+  padding: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.artwork h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
   color: #333;
-  padding: 24px 32px;
-  border-radius: 12px;
-  font-family: "Open Sans", sans-serif;
-  font-size: 18px;
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
-  z-index: 5;
-  overflow: hidden;
-
-  /* ukryty stan początkowy */
-  max-height: 0;
-  opacity: 0;
-  transition:
-    max-height 0.5s ease,
-    opacity 0.5s ease,
-    transform 0.5s ease;
-  pointer-events: none;
 }
 
-.info-box.visible {
-  /* docelowy stan widoczny – blok wysunięty i rozłożony */
-  transform: translateX(-50%) translateY(0);
-  max-height: 400px;  /* dopasuj do maksymalnej wysokości treści */
-  opacity: 1;
-  pointer-events: auto;
+.artwork p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 12px;
+  line-height: 1.4;
 }
 
-.info-box.hidden {
-  /* powrót do ukrycia */
-  transform: translateX(-50%) translateY(100%);
-  max-height: 0;
-  opacity: 0;
-  pointer-events: none;
+.artwork img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-top: 8px;
 }

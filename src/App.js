@@ -14,7 +14,7 @@ function App() {
        <GalleryMap />
        
     </div>
-    <div id="info-box" class="info-box hidden"></div>
+    
     </div>
     
   );
