@@ -1,3 +1,5 @@
+https://github.com/user-attachments/assets/891634f6-c665-4de4-a36d-1307d5ee62e8
+
 Gallery Map to pełnostackowa aplikacja webowa umożliwiająca interaktywną eksplorację galerii sztuki lub muzeum. Użytkownik może przeglądać mapę obiektu, wybierać sale i uzyskiwać informacje o eksponatach. Aplikacja składa się z:
 
 - Frontendu zbudowanego w React z mapą SVG i dynamicznym panelem informacji.
@@ -6,6 +8,7 @@ Gallery Map to pełnostackowa aplikacja webowa umożliwiająca interaktywną eks
 
 Technologie
 Frontend:
+
  - React (SPA)
 
  - Vite (dev server + bundler)
