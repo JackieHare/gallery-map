@@ -1,70 +1,89 @@
-# Getting Started with Create React App
+Gallery Map to pełnostackowa aplikacja webowa umożliwiająca interaktywną eksplorację galerii sztuki lub muzeum. Użytkownik może przeglądać mapę obiektu, wybierać sale i uzyskiwać informacje o eksponatach. Aplikacja składa się z:
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Frontendu zbudowanego w React z mapą SVG i dynamicznym panelem informacji.
 
-## Available Scripts
+Backendu zbudowanego w Node.js (Express), służącego do obsługi danych związanych z salami i dziełami sztuki.
 
-In the project directory, you can run:
+Projekt może być wykorzystywany jako wizualna prezentacja dla instytucji kultury, muzeów lub galerii.
 
-### `npm start`
+⚙️ Technologie
+Frontend:
+React (SPA)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Vite (dev server + bundler)
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+JSX
 
-### `npm test`
+CSS Modules
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+SVG jako mapa interaktywna
 
-### `npm run build`
+Backend:
+Node.js
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Express
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+SQLite (lub inna baza danych lokalna)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+REST API
 
-### `npm run eject`
+🚀 Jak uruchomić projekt lokalnie
+1. Klonowanie repozytoriów
+bash
+Kopiuj
+Edytuj
+git clone https://github.com/JackieHare/gallery-map.git
+git clone https://github.com/JackieHare/gallery-backend.git
+2. Frontend (React)
+bash
+Kopiuj
+Edytuj
+cd gallery-map
+npm install
+npm run dev
+Aplikacja uruchomi się pod adresem: http://localhost:5173
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+3. Backend (Node.js + Express)
+bash
+Kopiuj
+Edytuj
+cd gallery-backend
+npm install
+node server.js
+Backend nasłuchuje domyślnie na porcie 3001. Dane są dostępne pod adresami API, np.:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Kopiuj
+Edytuj
+GET http://localhost:3001/rooms
+GET http://localhost:3001/artworks
+Backend używa SQLite jako bazy lokalnej — wystarczy plik db.js.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+🔄 Komunikacja między frontendem a backendem
+Frontend wysyła zapytania HTTP (np. fetch) do backendu w celu pobrania informacji o salach i eksponatach.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+W komponencie GalleryMap.jsx dane są pobierane i przypisywane do konkretnych regionów mapy SVG.
 
-## Learn More
+Po kliknięciu w salę uruchamiany jest InfoBox z dynamiczną zawartością.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+🧪 Testy
+Frontend:
+App.test.js używa React Testing Library
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+bash
+Kopiuj
+Edytuj
+npm test
+Backend:
+Można dodać testy przy pomocy np. Jest lub Supertest.
 
-### Code Splitting
+📦 Deployment
+Projekt można wdrożyć w następujący sposób:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Frontend:
+Vercel / Netlify (obsługuje React + Vite out of the box)
 
-### Analyzing the Bundle Size
+Backend:
+Render / Railway / VPS (Express + Node.js)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Upewnij się, że frontend ma odpowiedni BASE_URL do backendu (http://localhost:3001 lub produkcyjny adres).
